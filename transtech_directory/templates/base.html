@@ -1,0 +1,68 @@
+
+{% load staticfiles %}
+{% load i18n %}
+{% load cookielaw_tags %}
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Trans.tech Directory">
+    <meta name="author" content="Emma">
+
+    <title>Trans.tech Directory</title>
+
+    
+    <link href="{% static 'css/site.css' %}" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="{% static 'cookielaw/css/cookielaw.css' %}" rel="stylesheet">
+    <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'cookielaw/js/cookielaw.js' %}"></script>
+    
+  </head>
+
+  <body>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Trans.tech Directory</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'admin:index' %}">Admin</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+      
+        {% cookielaw_banner %}
+        {% block content %}
+        <div class="firstDiv alert alert-info">
+          <h1><i class="glyphicon glyphicon-ok text-success"></i>&nbsp;&nbsp;{% trans 'It worked!' %}</h1>
+          <h2>{% trans 'Congratulations on your first Django-powered page.' %}</h2>
+        </div>
+        <p>{% trans "Of course, you haven't actually done any work yet." %}<br/>
+        {% trans "Next, start your first app by running <code>python manage.py startapp [app_label]</code>." %}</p>
+        <p class="alert alert-warning"><i class="glyphicon glyphicon-warning-sign"></i>&nbsp;&nbsp;{% trans "You're seeing this message because you have <code>DEBUG = True</code> in your Django settings file and you haven't configured any URLs. Get to work!" %}</p>
+      {% endblock %}
+    </div>
+  </body>
+</html>
+
+

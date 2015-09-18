@@ -1,0 +1,7 @@
+venv
+*.pyc
+*.sw?
+environ.py
+db.sqlite3
+transtech_directory/static/css/*
+.sass-cache/*
