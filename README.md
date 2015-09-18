@@ -21,3 +21,12 @@ Verify the installation was successful by opening the Terminal application and r
 
 `python3 -m venv myvenv`
 
+
+
+This will create a virtualenv (basically a folder) called myvenv. Once it's donem you'll have to activate the virtualenv and install the reauired python libraries this is done with the following commands:
+```
+source myvenv/in/activate        # activate the virtualenv
+pip install -r reauirements.txt  # install the reauired libraries
+```
+
+Every time you want to run a Django related commandm you'll need to be inside a "virtualenv activated" shell 
