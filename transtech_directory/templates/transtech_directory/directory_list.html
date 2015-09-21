@@ -1,5 +1,21 @@
-<ul>
-  {% for object in object_list %}
-    <li>{{object.company}}</li>
-  {% endfor %}
-</ul>
+{% extends "base.html" %}
+
+{%block content %}
+<div class="container">
+  <div class="table-responsive">
+    <table class="listing table table-striped">
+      <tr>
+        <th class="title">company</th>
+      </tr>
+      {% for object in object_list %}
+        <tr>
+          <td class="company">
+            {{object.service_provider}}
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  </div>  
+</div>
+{% endblock %}
+

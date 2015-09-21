@@ -49,20 +49,11 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-
-    <div class="container">
-      
-        {% cookielaw_banner %}
-        {% block content %}
-        <div class="firstDiv alert alert-info">
-          <h1><i class="glyphicon glyphicon-ok text-success"></i>&nbsp;&nbsp;{% trans 'It worked!' %}</h1>
-          <h2>{% trans 'Congratulations on your first Django-powered page.' %}</h2>
-        </div>
-        <p>{% trans "Of course, you haven't actually done any work yet." %}<br/>
-        {% trans "Next, start your first app by running <code>python manage.py startapp [app_label]</code>." %}</p>
-        <p class="alert alert-warning"><i class="glyphicon glyphicon-warning-sign"></i>&nbsp;&nbsp;{% trans "You're seeing this message because you have <code>DEBUG = True</code> in your Django settings file and you haven't configured any URLs. Get to work!" %}</p>
+    <div class="container" id="block-container">
+      {% cookielaw_banner %}
+      {% block content %}
       {% endblock %}
-    </div>
+    </div>      
   </body>
 </html>
 
