@@ -5,4 +5,4 @@ from .models import Directory
 
 @admin.register(Directory)
 class DirectoryAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('__str__',)
