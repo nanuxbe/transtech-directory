@@ -35,6 +35,8 @@ INSTALLED_APPS = (
     'crispy_forms',
     'cookielaw',
     'kombu.transport.django.KombuAppConfig',
+
+    'django_countries',
 )
 
 MIDDLEWARE_CLASSES = (
