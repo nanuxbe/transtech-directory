@@ -16,7 +16,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', DirectoryListView.as_view(), name='directory'),
     url(r'^new/$', DirectoryCreateView.as_view(), name='directory_create'),
-    url(r'^view/<?P(slug)[\w-]+>/', DirectoryDetailView.as_view(), name='directory_detail'),
+    url(r'^view/(?P<slug>[\w-]+)/$', DirectoryDetailView.as_view(), name='directory_detail'),
 
     url(r'^comments/', include(comments_urls)),
     url(r'^ratings/', include('star_ratings.urls', namespace='ratings', app_name='ratings')),
