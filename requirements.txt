@@ -8,3 +8,4 @@ django-kombu
 django-webtest
 factory-boy
 django-countries
+django-contrib-comments
