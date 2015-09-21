@@ -5,12 +5,16 @@
   <div class="table-responsive">
     <table class="listing table table-striped">
       <tr>
-        <th class="title">company</th>
+        <th class="title">Company</th>
+        <th class="category">Category</th>
       </tr>
       {% for object in object_list %}
         <tr>
-          <td class="company">
+          <td class="company"><a href="#">
             {{object.service_provider}}
+          </a></td>
+          <td>
+            {{object.service_category}}
           </td>
         </tr>
       {% endfor %}
