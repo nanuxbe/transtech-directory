@@ -31,12 +31,15 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 
     'crispy_forms',
     'cookielaw',
     'kombu.transport.django.KombuAppConfig',
 
     'django_countries',
+    'django_comments',
+    'star_ratings',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -106,3 +109,8 @@ if DEBUG:
 
 BROKER_URL = 'django://'
 
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
+
+SITE_ID = 1
