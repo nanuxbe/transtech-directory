@@ -30,6 +30,7 @@ class Directory(models.Model):
 
     service_provider = models.CharField(_('Service provider name'), max_length=255)
     slug = models.SlugField(_('slug'), max_length=255)
+    description = models.TextField(_('Description'), blank=True, null=True)
     service_category = models.ManyToManyField(Category, verbose_name=_('Categories'))
     link = models.URLField(_('Link'), blank=True, null=True)
 
