@@ -39,6 +39,7 @@ INSTALLED_APPS = (
 
     'django_countries',
     'django_comments',
+    'star_ratings',
 )
 
 MIDDLEWARE_CLASSES = (

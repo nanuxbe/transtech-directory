@@ -17,4 +17,5 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^directory/$', DirectoryListView.as_view(), name='directory'),
     url(r'^comments/', include(comments_urls)),
+    url(r'^ratings/', include('star_ratings.urls', namespace='ratings', app_name='ratings')),
 ]
