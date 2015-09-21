@@ -7,3 +7,4 @@ django-debug-toolbar-template-timings
 django-kombu
 django-webtest
 factory-boy
+django-countries
