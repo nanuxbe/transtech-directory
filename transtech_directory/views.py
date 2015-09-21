@@ -1,8 +1,10 @@
+﻿
 from django.views.generic import ListView, DetailView, CreateView
 from django.core.urlresolvers import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 
+from .forms import DirectoryForm
 from .models import Directory
 
 
@@ -18,6 +20,7 @@ class DirectoryCreateView(CreateView):
     model = Directory()
     success_url = reverse_lazy('directory')
     template_name = 'transtech_directory/create.html'
+    form_class = DirectoryForm 
 
     def form_valid(self, form):
         form.save()
