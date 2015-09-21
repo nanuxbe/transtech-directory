@@ -106,3 +106,6 @@ if DEBUG:
 
 BROKER_URL = 'django://'
 
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
