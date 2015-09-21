@@ -5,8 +5,8 @@
 {% block content %}
 <html>
   <body>
-    {% for object in directory  %}
-      {{ object.company }}
+    {% for object in objects_list  %}
+      {{ object.service_provider}}
     {% endfor %}
   </body>
 </html>

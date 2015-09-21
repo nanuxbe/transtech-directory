@@ -44,4 +44,3 @@ class Address(models.Model):
 
     longitude = models.FloatField(blank=True, null=True)
     latitude = models.FloatField(blank=True, null=True)
->>>>>>> master
