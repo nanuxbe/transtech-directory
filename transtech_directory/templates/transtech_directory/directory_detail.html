@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load ratings %}
+{% load comments %}
+
+{% block content %}
+  <br/><br/><br/>
+  <h2>{{object}}</h2> {% ratings object %}
+  <div>
+    {% render_comment_list for object %}
+  </div>
+  {% get_comment_form for object as form %}
+  <table>
+    <form action="{% comment_form_target %}" method="post">
+      {% csrf_token %}
+      {{ form  }}
+      <tr>
+        <td colspan="2">
+          <input type="submit" name="submit" value="Post">
+          <input type="submit" name="preview" value="Preview">
+        </td>
+      </tr>
+    </form>
+  </table>
+                        </td>
+                  </tr>
+  </table>
+{% endblock %}  
+  
+
+    
