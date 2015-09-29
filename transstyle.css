@@ -1,0 +1,45 @@
+body {
+    background-color: #3B6699;
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+}
+
+p {
+    color: #323F40;
+}
+
+.container {
+    background-color: #3B6699;
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+}
+
+.title {
+    float: right;
+}
+
+.page-header {
+    background-color: #E0EBEB;
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+
+h4 {
+    color: #323F40;
+    font-family: 'Raleway', sans-serif;
+    display: inline;
+    padding: 10% 0% 10% 5%;
+}
+            
+h1 {
+    color: #C8FEFF;
+    font-family: 'Raleway', sans-serif;
+    position: absolute;
+    text-align: right;
+    padding: 2% 20% 10% 5%;
+    
+    font-size: 3.5em;
+}
+
