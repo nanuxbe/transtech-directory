@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load ratings %}
 
 {%block content %}
 <div class="container">
@@ -30,7 +31,9 @@
               No link
             {% endif %}
           </td>
-          <td></td>
+          <td>
+            {% ratings object 16 16 %}
+          </td>
           <td>
           </td>
         </tr>

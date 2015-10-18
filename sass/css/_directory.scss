@@ -1,16 +1,30 @@
 .container{
-    
-    .company{
-      color: #0000FF;
-      list-style-type: none;
-      font-size:  14px;
-      padding-top: 5px;
-    }
-
-    .title{
-      font-size:  20px;
-      color:  $brand-primary;
-    }
+  .company{
+    color: #0000FF;
+    list-style-type: none;
+    font-size:  14px;
+    padding-top: 5px;
   }
 
+  .title{
+    font-size:  20px;
+    color:  $brand-primary;
+  }
+}
 
+.star-ratings {
+  .star-ratings-rating-average,
+  .star-ratings-rating-count,
+  .star-ratings-rating-user {
+    font-size: 75%;
+    display: none;
+  }
+
+  &:hover {
+    .star-ratings-rating-average,
+    .star-ratings-rating-count,
+    .star-ratings-rating-user {
+      display: block;
+    }
+  }
+}
