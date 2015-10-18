@@ -37,6 +37,9 @@ class Directory(models.Model):
     def __str__(self):
         return self.service_provider
 
+    def __str__(self):
+        return self.service_provider
+
 
 class ContactInfo(models.Model):
 

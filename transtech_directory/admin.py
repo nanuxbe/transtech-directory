@@ -23,3 +23,12 @@ class DirectoryAdmin(admin.ModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
     pass
 
+
+@admin.register(ContactInfo)
+class ContactInfoAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Address)
+class AddressAdmin(admin.ModelAdmin):
+    pass
