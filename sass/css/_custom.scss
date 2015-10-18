@@ -1,14 +1,34 @@
 /* Write your custom sass here */
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.navbar-header {
+  .navbar-brand {
+    padding: 0 15px;
+  }
+}
+
+.navbar-right {
+  ul.navbar-nav > li > a {
+    font-family: 'Raleway', sans-serif;
+    font-size: 3.5em;
+  }
+}
+
 #CookielawBanner {
   margin-top: 60px;
   margin-bottom: -80px;
   border: 1px solid $brand-danger;
 }
+
 .firstDiv {
-  margin-top: 100px;
+  margin-top: $navbar-height + $grid-gutter-width / 2;
+  flex: 1;
 }
 
-#block-container{
-  padding-top:  60px;
+footer {
+  padding: 0 $grid-gutter-width / 2 $grid-gutter-width / 4 $grid-gutter-width / 2;
 }
-

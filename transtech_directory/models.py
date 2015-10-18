@@ -38,6 +38,14 @@ class Directory(models.Model):
     def __str__(self):
         return self.service_provider
 
+    def categories(self):
+        return ', '.join([c.name for c in self.service_category.all()])
+
+    def short_description(self):
+        if self.description is not None and len(self.description) > 30:
+            return '{} ...'.format(self.description[:26])
+        return self.description or ''
+
     def save(self, *args, **kwargs):
         # FIXME: check that the generated slug doesn't already exist in DB
         if self.slug is None:
