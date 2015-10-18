@@ -1,13 +1,13 @@
-from django.db import models
+﻿from django.db import models
 from django.utils.translation import ugettext as _
 
 from django_countries.fields import CountryField
 
 
 CONTACT_TYPES = (
-    ('phone', 'Phone'),
-    ('email', 'E-Mail'),
-    ('other', 'Other'),
+    ('phone', _('Phone')),
+    ('email', _('E-Mail')),
+    ('other', _('Other')),
 )
 
 
