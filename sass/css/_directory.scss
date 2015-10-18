@@ -14,17 +14,12 @@
 
 .star-ratings {
   .star-ratings-rating-average,
-  .star-ratings-rating-count,
   .star-ratings-rating-user {
-    font-size: 75%;
     display: none;
   }
 
-  &:hover {
-    .star-ratings-rating-average,
-    .star-ratings-rating-count,
-    .star-ratings-rating-user {
-      display: block;
-    }
+  .star-ratings-rating-count {
+    font-size: 60%;
+    color: $gray-light;
   }
 }
