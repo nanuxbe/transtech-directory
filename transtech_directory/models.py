@@ -1,5 +1,6 @@
 ﻿from django.db import models
 from django.utils.translation import ugettext as _
+from django.utils.text import slugify
 
 from django_countries.fields import CountryField
 
@@ -37,8 +38,11 @@ class Directory(models.Model):
     def __str__(self):
         return self.service_provider
 
-    def __str__(self):
-        return self.service_provider
+    def save(self, *args, **kwargs):
+        # FIXME: check that the generated slug doesn't already exist in DB
+        if self.slug is None:
+            self.slug = slugify(self.service_provider)
+        super(Directory, self).save(*args, **kwargs)
 
 
 class ContactInfo(models.Model):
