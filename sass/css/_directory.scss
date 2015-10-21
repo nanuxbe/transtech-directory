@@ -1,16 +1,25 @@
 .container{
-    
-    .company{
-      color: #0000FF;
-      list-style-type: none;
-      font-size:  14px;
-      padding-top: 5px;
-    }
-
-    .title{
-      font-size:  20px;
-      color:  $brand-primary;
-    }
+  .company{
+    color: #0000FF;
+    list-style-type: none;
+    font-size:  14px;
+    padding-top: 5px;
   }
 
+  .title{
+    font-size:  20px;
+    color:  $brand-primary;
+  }
+}
 
+.star-ratings {
+  .star-ratings-rating-average,
+  .star-ratings-rating-user {
+    display: none;
+  }
+
+  .star-ratings-rating-count {
+    font-size: 60%;
+    color: $gray-light;
+  }
+}

@@ -1,12 +1,17 @@
 {% extends "base.html" %}
+{% load ratings %}
 
 {%block content %}
 <div class="container">
   <div class="table-responsive">
     <table class="listing table table-striped">
       <tr>
-        <th class="title">Company</th>
+        <th class="title">Company Name</th>
         <th class="category">Category</th>
+        <th>Description</th>
+        <th>Link</th>
+        <th>Rating</th>
+        <th>Comment(s)</th>
       </tr>
       {% for object in object_list %}
         <tr>
@@ -14,7 +19,22 @@
             {{object.service_provider}}
           </a></td>
           <td>
-            {{object.service_category}}
+            {{object.categories}}
+          </td>
+          <td>
+            {{object.short_description}}
+          </td>
+          <td>
+            {% if object.link %}
+              <a href="{{object.link}}" target="_blank">Link</a>
+            {% else %}
+              No link
+            {% endif %}
+          </td>
+          <td>
+            {% ratings object 16 16 %}
+          </td>
+          <td>
           </td>
         </tr>
       {% endfor %}
