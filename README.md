@@ -30,3 +30,38 @@ pip install -r reauirements.txt  # install the reauired libraries
 ```
 
 Every time you want to run a Django related commandm you'll need to be inside a "virtualenv activated" shell 
+
+### Getting your environment ready
+
+In the main project directory, you'll find a file called `environ.py.dist`. Make a copy into a file named `environ.py` and edit to fit the settings on your computer. If you are just curious to get the project started, you can just copy the file and start the server
+
+### Compiling SaSS into CSS
+
+This project is configured to use [Ruby Compass](https://rubygems.org/gems/compass/versions/1.0.3) to build CSS.
+
+*On Ubuntu*
+
+`sudo apt-get install ruby-compass`
+
+*On Mac OS X*
+
+`sudo gem install compass`
+
+*On Windows*
+
+In a terminal:
+`gem install compass`
+
+
+Once Compass is installed, from the main project directory, run:
+
+- `compass compile` to compile SaSS source once
+- `compass watch` to have compass watch for changes and recompile SaSS files after each change
+
+
+### Starting the server
+
+- Make sure you are in a virtualenv-activated shell
+- boostrap the database: `./manage.py migrate`
+- create a user for yourself: `./manage.py createsuperuser`
+- start the actual server: `./manage.py runserver`

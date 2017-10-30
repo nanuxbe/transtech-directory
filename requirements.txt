@@ -4,7 +4,6 @@ celery
 django-cookie-law
 django-debug-toolbar
 django-debug-toolbar-template-timings
-django-kombu
 django-webtest
 factory-boy
 django-countries
