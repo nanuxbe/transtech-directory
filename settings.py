@@ -34,7 +34,6 @@ INSTALLED_APPS = (
     'django.contrib.sites',
 
     'crispy_forms',
-    'cookielaw',
     # 'kombu.transport.django.KombuAppConfig',
 
     'django_countries',
