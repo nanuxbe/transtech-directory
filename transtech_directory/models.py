@@ -48,7 +48,7 @@ class Directory(models.Model):
 
     def save(self, *args, **kwargs):
         # FIXME: check that the generated slug doesn't already exist in DB
-        if self.slug is None:
+        if self.slug is None or self.slug == '':
             self.slug = slugify(self.service_provider)
         super(Directory, self).save(*args, **kwargs)
 

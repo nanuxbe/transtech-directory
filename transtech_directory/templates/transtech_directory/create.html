@@ -1,9 +1,85 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
+{% load static %}
+{% load formset_tags %}
 
 {% block content %}
+<script src="{% static 'js/jquery.formset.js' %}"></script>
 <br/><br/><br/>
 
-   {% crispy form %}
+  <form method="POST">
+    {% crispy form %}
+    <h2>Addresses</h2>
+    <div class="formset" data-formset-prefix="{{ address_form.prefix  }}">
+      {{ address_form.management_form  }}
+
+      <div data-formset-body>
+        <!-- New forms will be inserted in here -->
+        {% for form in address_form %}
+          <div data-formset-form>
+            {% crispy form address_helper %}
+            <div style="display: none;">{{form.DELETE}}</div>
+            <button class="btn btn-danger" type="button" data-formset-delete-button>Remove address</button>
+          </div>
+        {% endfor %}
+      </div>
+
+      <!-- The empty form template. By wrapping this in a <script> tag, the
+      __prefix__ placeholder can easily be replaced in both attributes and
+      any scripts -->
+      <script type="form-template" data-formset-empty-form>
+        {% escapescript %}
+          <div data-formset-form>
+            {% crispy address_form.empty_form address_helper %}
+            <div style="display: none;">{{address_form.empty_form.DELETE}}</div>
+            <button class="btn btn-danger" type="button" data-formset-delete-button>Remove address</button>
+          </div>
+        {% endescapescript %}
+      </script>
+
+      <!-- This button will add a new form when clicked -->
+      <input type="button" value="Add another address" class="btn btn-success" data-formset-add>
+    </div>
+    <h2>Contact information</h2>
+    <div class="formset" data-formset-prefix="{{ contact_form.prefix  }}">
+      {{ contact_form.management_form  }}
+
+      <div data-formset-body>
+        <!-- New forms will be inserted in here -->
+        {% for form in contact_form %}
+          <div data-formset-form>
+            {% crispy form contact_helper %}
+            <div style="display: none;">{{form.DELETE}}</div>
+            <button class="btn btn-danger" type="button" data-formset-delete-button>Remove contact information</button>
+          </div>
+        {% endfor %}
+      </div>
+
+      <!-- The empty form template. By wrapping this in a <script> tag, the
+      __prefix__ placeholder can easily be replaced in both attributes and
+      any scripts -->
+      <script type="form-template" data-formset-empty-form>
+        {% escapescript %}
+          <div data-formset-form>
+            {% crispy contact_form.empty_form contact_helper %}
+            <div style="display: none;">{{contact_form.empty_form.DELETE}}</div>
+            <button class="btn btn-danger" type="button" data-formset-delete-button>Remove contact information</button>
+          </div>
+        {% endescapescript %}
+      </script>
+
+      <!-- This button will add a new form when clicked -->
+      <input type="button" value="Add another contact information" class="btn btn-success" data-formset-add>
+
+    </div>
+
+    <script>jQuery(function($) {
+      $(".formset").formset({
+          animateForms: true,
+          reorderMode: 'dom',
+      });
+    });</script>
+    <input type="submit" value="Add provider" class="btn btn-primary">
+  </form>
 
 {% endblock %}
