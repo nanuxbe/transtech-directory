@@ -25,7 +25,6 @@
 
     <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'cookielaw/js/cookielaw.js' %}"></script>
     <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
     
   </head>
@@ -51,7 +50,6 @@
       </div>
     </nav>
     <div class="container firstDiv" id="block-container">
-      {% cookielaw_banner %}
       {% block content %}
       {% endblock %}
     </div>

@@ -1,7 +1,6 @@
 Django
 django-crispy-forms
 celery
-django-cookie-law
 django-debug-toolbar
 django-debug-toolbar-template-timings
 django-webtest
