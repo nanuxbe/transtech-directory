@@ -35,6 +35,8 @@ INSTALLED_APPS = (
 
     'crispy_forms',
     # 'kombu.transport.django.KombuAppConfig',
+    'jquery',
+    'djangoformsetjs',
 
     'django_countries',
     'django_comments',
@@ -113,3 +115,5 @@ LOCALE_PATHS = (
 )
 
 SITE_ID = 1
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
